@@ -82,19 +82,15 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        if (B == null) {
-            return A;
+        if (A == null) {
+            return B;
         }
         IntList p = A;
         while (p.rest != null) {
             p = p.rest;
         }
-        while (B != null) {
-            p.rest = new IntList(B.first, null);
-            p = p.rest;
-            B = B.rest;
-        }
-        return null;
+        p.rest = B;
+        return A;
     }
 
     /**
@@ -103,8 +99,8 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //补一下参数链表为空的处理
-        if (A == null && B == null) {
-            return null;
+        if (A == null) {
+            return B;
         }
         IntList res = new IntList(A.first, null);
         IntList p = res; //res作为结果链表的开头不能挪动，所以用一个辅助指针
