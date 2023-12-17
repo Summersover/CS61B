@@ -118,6 +118,17 @@ public class IntList {
             B = B.rest;
         }
         return res;
+
+//        /*
+//        上面是自己写的比较愚蠢的写法，以下是递归写法
+//         */
+//        if(A == null){
+//            return B;
+//        }
+//        if(A.rest == null){
+//            return new IntList(A.first, B);
+//        }
+//        return new IntList(A.first, catenate(A.rest, B));
     }
 
 
